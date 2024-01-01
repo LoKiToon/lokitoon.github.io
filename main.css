@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html {
+  --window-dark: #11111b;
+  --bg-dark: #181825;
+  --text-dark: #cdd6f4;
+  --link-dark: #89b4fa;
+  --surface-dark: #1e1e2e;
+  --separator-dark: #7f849c;
+  --accent-dark: #fab387;
+  --hover-dark: #0000002f;
+  background: var(--bg-dark);
+  user-select: none;
+  color: var(--text-dark);
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1;
+  margin: 1px;
+  padding: 1em;
+}
+
+.main,
+.menu {
+  background: var(--surface-dark);
+  box-shadow: 0 0 5px #000000aa;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 1em;
+  overflow: auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.main {
+  padding-bottom: 7px;
+}
+
+.menu {
+  top: 10px;
+  position: sticky;
+  background: var(--surface-dark);
+  z-index: 4;
+}
+
+.model {
+  background: var(--surface-dark);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 1em;
+  display: inline-block;
+  margin: 5px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+
+.Jordan,
+.Blueberri {
+  width: 512px;
+  height: 512px;
+  margin: 10px;
+}
+
+.JordanMAIN,
+.BlueberriMAIN {
+  position: absolute;
+  z-index: 1;
+}
+
+
+.JordanEye {
+  position: absolute;
+  z-index: 2;
+}
+
+.JordanMouth {
+  position: absolute;
+  z-index: 3;
+}
+
+.BlueberriFace {
+  position: absolute;
+  z-index: 2;
+}
+
+.slidecontainer {
+  display: flex;
+  width: 100%;
+}
+
+.menubutton {
+  display: inline-block;
+  transition: 0.1s;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  filter: invert(82%) sepia(7%) saturate(864%) hue-rotate(192deg) brightness(105%) contrast(91%);
+}
+
+.menubutton:hover {
+  background: var(--hover-dark);
+}
+
+.windowtitle {
+  font-weight: bold;
+  font-size: 16pt;
+  text-align: center;
+  padding: 2px;
+  background: var(--window-dark);
+  margin-bottom: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 100;
+  line-height: 1;
+}
+
+a {
+  color: #89b4fa;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+}
+
+.footertext {
+  font-family: monospace;
+}
+
+li {
+  font-size: 18px;
+  margin: 15px;
+  line-height: 1;
+}
+
+.folder {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  margin: 5px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 35pt;
+  text-align: center;
+  line-height: 4;
+}
+
+.publicmodel {
+  display: inline-block;
+  margin: 5px;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.folder:hover,
+.publicmodel:hover {
+  background: var(--hover-dark);
+}
+
+.media {
+  margin: 5px;
+  display: inline-block;
+  filter: drop-shadow(0px 2px 2px black);
+  transition: 0.1s;
+}
+
+.media:hover {
+  filter: drop-shadow(0px 5px 5px black);
+}
+
+.label {
+  font-size: 20px;
+  color: #ffffffff;
+  display: block;
+}
+
+hr {
+  border: 1px solid #7f849c;
+}
+
+.titleseparator {
+  background: var(--surface-dark);
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 3mm;
+  padding: 1mm;
+  overflow: auto;
+  font-size: 30px;
+  border-bottom: solid 1mm var(--accent-dark);
+}
