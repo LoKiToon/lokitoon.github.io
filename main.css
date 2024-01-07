@@ -8,7 +8,7 @@ html {
   --surface-dark: #1e1e2e;
   --separator-dark: #7f849c;
   --accent-dark: #fab387;
-  --hover-dark: #0000002f;
+  --hover-dark: #313244;
   background: var(--bg-dark);
   user-select: none;
   color: var(--text-dark);
@@ -98,7 +98,6 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 10px;
-  filter: invert(82%) sepia(7%) saturate(864%) hue-rotate(192deg) brightness(105%) contrast(91%);
 }
 
 .menubutton:hover {

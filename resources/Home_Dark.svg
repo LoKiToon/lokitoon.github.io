@@ -12,7 +12,7 @@
   <defs
      id="defs1" />
   <path
-     style="color:#000000;fill:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:6.138;-inkscape-stroke:none;paint-order:markers fill stroke;fill-opacity:1;stroke:none"
+     style="color:#000000;fill:#cdd6f4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:6.138;-inkscape-stroke:none;paint-order:markers fill stroke;fill-opacity:1;stroke:none"
      d="m 31.359375,7.2324219 -24,20.0000001 A 1.0001,1.0001 0 0 0 7,28 v 28 a 1.0001,1.0001 0 0 0 1,1 h 18 a 1.0001,1.0001 0 0 0 1,-1 V 43 h 10 v 13 a 1.0001,1.0001 0 0 0 1,1 h 18 a 1.0001,1.0001 0 0 0 1,-1 V 28 a 1.0001,1.0001 0 0 0 -0.359375,-0.767578 l -24,-20.0000001 a 1.0001,1.0001 0 0 0 -1.28125,0 z M 32,9.3007813 55,28.46875 V 55 H 39 V 42 A 1.0001,1.0001 0 0 0 38,41 H 26 a 1.0001,1.0001 0 0 0 -1,1 V 55 H 9 V 28.46875 Z"
      id="path9" />
 </svg>

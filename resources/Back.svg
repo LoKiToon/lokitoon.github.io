@@ -11,12 +11,7 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs1" />
-  <g
-     id="layer1"
-     style="stroke:none;fill:#000000;fill-opacity:1">
-    <path
-       id="path26"
-       style="color:#000000;fill:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:6.138;-inkscape-stroke:none;paint-order:markers fill stroke;stroke:none;fill-opacity:1"
-       d="M 18 21 A 1 1 0 0 0 17.292969 21.292969 L 7.2929688 31.292969 A 1.0001 1.0001 0 0 0 7.1953125 31.439453 A 1 1 0 0 0 7.1210938 31.548828 A 1.0001 1.0001 0 0 0 7 32 A 1.0001 1.0001 0 0 0 7.1210938 32.451172 A 1 1 0 0 0 7.1953125 32.560547 A 1.0001 1.0001 0 0 0 7.2929688 32.707031 L 17.292969 42.707031 A 1 1 0 0 0 18.707031 42.707031 A 1 1 0 0 0 18.707031 41.292969 L 10.414062 33 L 56 33 A 1 1 0 0 0 57 32 A 1 1 0 0 0 56 31 L 10.414062 31 L 18.707031 22.707031 A 1 1 0 0 0 18.707031 21.292969 A 1 1 0 0 0 18 21 z " />
-  </g>
+  <path
+     style="color:#000000;fill:#cdd6f4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:6.138;-inkscape-stroke:none;paint-order:markers fill stroke;stroke:none;fill-opacity:1"
+     d="M 18 21 A 1 1 0 0 0 17.292969 21.292969 L 7.2929688 31.292969 A 1.0001 1.0001 0 0 0 7.1953125 31.439453 A 1 1 0 0 0 7.1210938 31.548828 A 1.0001 1.0001 0 0 0 7 32 A 1.0001 1.0001 0 0 0 7.1210938 32.451172 A 1 1 0 0 0 7.1953125 32.560547 A 1.0001 1.0001 0 0 0 7.2929688 32.707031 L 17.292969 42.707031 A 1 1 0 0 0 18.707031 42.707031 A 1 1 0 0 0 18.707031 41.292969 L 10.414062 33 L 56 33 A 1 1 0 0 0 57 32 A 1 1 0 0 0 56 31 L 10.414062 31 L 18.707031 22.707031 A 1 1 0 0 0 18.707031 21.292969 A 1 1 0 0 0 18 21 z " />
 </svg>
