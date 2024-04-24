@@ -4,7 +4,7 @@ const menuButtons = [
   ["index.html", "resources/Home_Dark.svg", "Home"],
   ["portfolio.html", "resources/Folder_Dark.svg", "Portfolio"],
   ["expressionplayground.html", "resources/Faces_Dark.svg", "Expression Playground"],
-  ["othersites.html", "resources/User_Dark.svg", "My Friends' Websites"],
+  ["othersites.html", "resources/Website_Dark.svg", "My Friends' Websites"],
   ["fanart.html", "resources/Palette_Dark.svg", "Fan-Art"],
   ["downloads.html", "resources/Download_Dark.svg", "Public Downloads"]
 ]
