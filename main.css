@@ -1,17 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+@media (prefers-color-scheme: dark) {
+  html {
+    --window: #121212;
+    --bg: #191919;
+    --text: #d6d6d6;
+    --link: #89b4fa;
+    --surface: #1f1f1f;
+    --separator: #858585;
+    --accent: #f0b77f;
+    --hover: #333;
+  }
+
+  .menubutton:hover {
+    background: var(--hover);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    --window: #e0e0e0;
+    --bg: #e6e6e6;
+    --text: #222;
+    --link: #527ec6;
+    --surface: #ededed;
+    --separator: #7a7a7a;
+    --accent: #e99746;
+    --hover: #ddd;
+  }
+
+  .menubutton {
+    filter: invert(100%);
+  }
+
+  .menubutton:hover {
+    background: #222;
+  }
+}
+
 html {
-  --window-dark: #11111b;
-  --bg-dark: #181825;
-  --text-dark: #cdd6f4;
-  --link-dark: #89b4fa;
-  --surface-dark: #1e1e2e;
-  --separator-dark: #7f849c;
-  --accent-dark: #fab387;
-  --hover-dark: #313244;
-  background: var(--bg-dark);
+  background: var(--bg);
   user-select: none;
-  color: var(--text-dark);
+  color: var(--text);
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -24,8 +54,8 @@ body {
 
 .main,
 .menu {
-  background: var(--surface-dark);
-  box-shadow: 0 0 5px #000000aa;
+  background: var(--surface);
+  box-shadow: 0 0 5px #00000022;
   font-size: 16px;
   line-height: 1.5;
   margin: 1em;
@@ -41,13 +71,14 @@ body {
 .menu {
   top: 10px;
   position: sticky;
-  background: var(--surface-dark);
+  background: var(--surface);
   z-index: 4;
 }
 
+/*
 .model {
-  background: var(--surface-dark);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  background: var(--surface);
+  box-shadow: 0 0 5px #00000022;
   border-radius: 10px;
   font-size: 16px;
   padding: 1em;
@@ -56,7 +87,6 @@ body {
   margin-top: 7px;
   margin-bottom: 7px;
 }
-
 
 .Jordan,
 .Blueberri {
@@ -85,7 +115,7 @@ body {
 .BlueberriFace {
   position: absolute;
   z-index: 2;
-}
+}*/
 
 .slidecontainer {
   display: flex;
@@ -100,16 +130,12 @@ body {
   border-radius: 10px;
 }
 
-.menubutton:hover {
-  background: var(--hover-dark);
-}
-
 .windowtitle {
   font-weight: bold;
   font-size: 16pt;
   text-align: center;
   padding: 2px;
-  background: var(--window-dark);
+  background: var(--window);
   margin-bottom: 5px;
 }
 
@@ -124,7 +150,7 @@ h6 {
 }
 
 a {
-  color: #89b4fa;
+  color: var(--link);
 }
 
 .footer {
@@ -147,10 +173,10 @@ li {
   width: 200px;
   height: 200px;
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 5px #00000055;
   margin: 5px;
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--text);
   font-size: 35pt;
   text-align: center;
   line-height: 4;
@@ -165,43 +191,43 @@ li {
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--text);
   line-height: 1;
 }
 
 .folder:hover,
 .publicmodel:hover {
-  background: var(--hover-dark);
+  background: var(--hover);
 }
 
 .media {
   margin: 5px;
   display: inline-block;
-  filter: drop-shadow(0px 2px 2px black);
+  filter: drop-shadow(0px 2px 2px #0000007f);
   transition: 0.1s;
 }
 
 .media:hover {
-  filter: drop-shadow(0px 5px 5px black);
+  filter: drop-shadow(0px 5px 5px #0000007f);
 }
 
 .label {
   font-size: 20px;
-  color: #ffffffff;
+  color: var(--text);
   display: block;
 }
 
 hr {
-  border: 1px solid #7f849c;
+  border: 1px solid var(--separator);
 }
 
 .titleseparator {
-  background: var(--surface-dark);
+  background: var(--surface);
   text-align: center;
   line-height: 1.5;
   margin-bottom: 3mm;
   padding: 1mm;
   overflow: auto;
   font-size: 30px;
-  border-bottom: solid 1mm var(--accent-dark);
+  border-bottom: solid 1mm var(--accent);
 }
