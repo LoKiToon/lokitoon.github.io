@@ -153,6 +153,10 @@ a {
   color: var(--link);
 }
 
+p {
+  font-size: 16pt;
+}
+
 .footer {
   text-align: center;
   font-size: 12px;
@@ -162,10 +166,8 @@ a {
   font-family: monospace;
 }
 
-li {
-  font-size: 18px;
-  margin: 15px;
-  line-height: 1;
+ul {
+  text-align: left;
 }
 
 .folder {
