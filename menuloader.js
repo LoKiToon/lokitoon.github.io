@@ -9,9 +9,7 @@ const menuButtons = [
   ["downloads.html", "resources/Download.svg", "Public Downloads"]
 ]
 
-let i
-
-for (i = 0; i <= menuButtons.length - 1; i++) {
+for (let i = 0; i <= menuButtons.length - 1; i++) {
   let link = document.createElement("a")
   link.className = "menubutton"
   link.href = menuButtons[i][0]
