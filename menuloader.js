@@ -14,9 +14,11 @@ for (let i = 0; i <= menuButtons.length - 1; i++) {
   link.className = "menubutton"
   link.href = menuButtons[i][0]
   link.title = menuButtons[i][2]
+  link.draggable = false
   menuElement.appendChild(link)
   
   let image = document.createElement("img")
   image.src = menuButtons[i][1]
+  image.draggable = false
   link.appendChild(image)
 }
