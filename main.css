@@ -175,18 +175,6 @@ ul {text-align: left;}
 }
 
 /*
-.model {
-  background: var(--surface);
-  box-shadow: 0 0 5px #00000022;
-  border-radius: 10px;
-  font-size: 16px;
-  padding: 1em;
-  display: inline-block;
-  margin: 5px;
-  margin-top: 7px;
-  margin-bottom: 7px;
-}
-
 .Jordan,
 .Blueberri {
   width: 512px;
@@ -214,9 +202,4 @@ ul {text-align: left;}
 .BlueberriFace {
   position: absolute;
   z-index: 2;
-}
-
-.slidecontainer {
-  display: flex;
-  width: 100%;
 }*/
