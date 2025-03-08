@@ -208,33 +208,3 @@ ul {text-align: left;}
   font-size: 30px;
   border-bottom: solid 1mm var(--accent);
 }
-
-/*
-.Jordan,
-.Blueberri {
-  width: 512px;
-  height: 512px;
-  margin: 10px;
-}
-
-.JordanMAIN,
-.BlueberriMAIN {
-  position: absolute;
-  z-index: 1;
-}
-
-
-.JordanEye {
-  position: absolute;
-  z-index: 2;
-}
-
-.JordanMouth {
-  position: absolute;
-  z-index: 3;
-}
-
-.BlueberriFace {
-  position: absolute;
-  z-index: 2;
-}*/
