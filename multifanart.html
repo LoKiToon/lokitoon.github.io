@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>_lounge</title>
   <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon.png">
@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
+  <div id="modal">
+    <img id="close" src="resources/Close.svg" onclick="hideImgModal()" draggable="false">
+    <div id="modal_img"></div>
+    <div id="alt_txt"></div>
+  </div>
   <div class="menu">
     <div class="windowtitle">Menu</div>
     <a class="menubutton" href="fanart.html" title="Back" draggable="false"><img src="resources/Back.svg" draggable="false"></a>
@@ -17,14 +22,25 @@
     <div class="windowtitle">Multi Fan-Art</div>
 
     <h3>Artist names are shown below pictures.</h3>
+    <h3>Click on a picture to zoom in. (and view details about it)</h3>
     <hr>
 
-    <div class="media"><img src="resources/fanart/multiple/by_amigax.png" width="500"><a class="label">AmigaX</a></div>
-    <div class="media"><img src="resources/fanart/multiple/by_symmetrical.jpg" width="500"><a class="label">Symmetrical</a></div>
+    <div class="media"><img
+    loading="lazy"
+    alt="Featuring Cosmo, Nacho, and Feizoy (left to right)"
+    src="resources/fanart/multiple/by_amigax.png" width="500" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Featuring Nacho, Catchibun, and Feizoy (left to right)"
+    src="resources/fanart/multiple/by_symmetrical.jpg" width="500" onclick="showImgModal(this)">
+    <div class="label">Symmetrical</div></div>
     
   </div>
   <div class="footer">
     <div class="footertext">This website was hosted using <a href="https://pages.github.com/">GitHub Pages</a></div>
   </div>
+  <script src="imgmodal.js"></script>
 </body>
 </html>

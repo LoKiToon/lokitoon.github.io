@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>_lounge</title>
   <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon.png">
@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
+  <div id="modal">
+    <img id="close" src="resources/Close.svg" onclick="hideImgModal()" draggable="false">
+    <div id="modal_img"></div>
+    <div id="alt_txt"></div>
+  </div>
   <div class="menu">
     <div class="windowtitle">Menu</div>
     <a class="menubutton" href="portfolio.html" title="Back" draggable="false"><img src="resources/Back.svg" draggable="false"></a>
@@ -17,64 +22,272 @@
     <div class="windowtitle">2022 Art (Pictures)</div>
 
     <h3>Names of artist's featured characters are shown below pictures.</h3>
+    <h3>Click on a picture to zoom in. (and view details about it)</h3>
     <hr>
 
-    <div class="media"><img loading="lazy" src="resources/2022art/RobotoSceneRemake.png" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/WelcomeMiaouth.png" width="400"><a class="label">French Teacher, AmigaX, Renegade Spider</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/trickyrender.png" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/JaclonRenderWATERMARKS.png" width="400"><a class="label">Renegade Spider</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/BouncyBalls.png" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/ChintzyRender.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/pompomrender.png" width="400"><a class="label">PompomNotes</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/Sobbles.png" width="400"><a class="label">SobbleFan, [Redacted]</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/AqhaHand.png" width="400"><a class="label">JHPHENEX99</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/AqhaRenders.png" width="400"><a class="label">JHPHENEX99</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/JoshyPorts.png" width="400"><a class="label">[Redacted]</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/FauxRender.png" width="400"><a class="label">Grind3h</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/emotakhwif.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/AutoRender.png" width="400"><a class="label">megagem_art</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/BerryComparision.png" width="400"><a class="label">bozosart</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/WoolyRenderCard.png" width="400"><a class="label">kirbyzaz</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/eatthewater.png" width="400"><a class="label">Snowby3D</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/helpmeimdrowning.png" width="400"><a class="label">kirbyzaz</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/4SnowScarfs.png" width="400"><a class="label">Snowby3D</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/Puffcomputerrender.png" width="400"><a class="label">kirbyzaz</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/StevieRenderCard.png" width="400"><a class="label">MA_Does_Art</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/amigalove.png" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/saddd.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/BoingyRender.png" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/Axaaxa%20hug.png" width="400"><a class="label">AOxOA395</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/amiga%20got%20a%20vaccine.gif" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/Paint%20Cube.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/MagnetRenders.png" width="400"><a class="label">kirbyzaz</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/MAGNETTEST.png" width="400"><a class="label">kirbyzaz</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/AmigaXBanner.png" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/hafiznormalzoruarender.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/hafiznormalzoruarneder.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/hafizzoruarender.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/opimirender.png" width="400"><a class="label">Axalil395a593</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/Puffz.png" width="400"><a class="label">kirbyzaz</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/JamesRender4.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/JamesRender3.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/JamesRender2.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/JamesRender1.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/sobframes.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/soblaptoprender.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/snails.png" width="400"><a class="label">Grind3h</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/snowbyrender.png" width="400"><a class="label">Snowby3D</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/THANK.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/Normalfront.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/HisuianFront.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/Zoura%20Hold%20Kirb%20OWO.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/HisuianRender.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/orbs.png" width="400"><a class="label">bozosart</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/NikoRender.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/GloriaRender.png" width="400"><a class="label">TorchicMaster</a></div>
-    <div class="media"><img loading="lazy" src="resources/2022art/NikonKirbyRender.png" width="400"></div>
+    <div class="media"><img
+    loading="lazy"
+    alt="3D render showing off Roboto's new modern design. For AmigaX"
+    src="resources/2022art/RobotoSceneRemake.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="I made a character for my French Teacher and his name is Miaouth. Tricky (by AmigaX) and Jaclon (by Renegade Spider) are waving hello to him."
+    src="resources/2022art/WelcomeMiaouth.png" width="400" onclick="showImgModal(this)">
+    <div class="label">French Teacher, AmigaX, Renegade Spider</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A simple 3D render of Tricky. For AmigaX"
+    src="resources/2022art/trickyrender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A simple 3D render of Jaclon eating a donut. For Renegade Spider"
+    src="resources/2022art/JaclonRenderWATERMARKS.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Renegade Spider</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3D render of all 6 Boing Ball Objies. Objies originally created by kirbyzaz. For AmigaX"
+    src="resources/2022art/BouncyBalls.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3D render of Chintzy, an Objie that functions as an MP3 player. Objies originally created by kirbyzaz. Inspired by DankPods"
+    src="resources/2022art/ChintzyRender.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3 Pompoms are on the laptop. For PompomNotes."
+    src="resources/2022art/pompomrender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">PompomNotes</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="James on the left is waving to Josh. For LittleSobBlue and [Redacted]"
+    src="resources/2022art/Sobbles.png" width="400" onclick="showImgModal(this)">
+    <div class="label">SobbleFan, [Redacted]</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A hand is carrying Aqha. She looks distressed. For Jama"
+    src="resources/2022art/AqhaHand.png" width="400" onclick="showImgModal(this)">
+    <div class="label">JHPHENEX99</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A mini comic of Aqha getting stuck inside Jam and jumping out of it. For Jama"
+    src="resources/2022art/AqhaRenders.png" width="400" onclick="showImgModal(this)">
+    <div class="label">JHPHENEX99</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3 screenshots from different programs, Source Filmmaker, MikuMikuDance and Blender all showing 3D models of Josh"
+    src="resources/2022art/JoshyPorts.png" width="400" onclick="showImgModal(this)">
+    <div class="label">[Redacted]</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3D render of Faux, with a smug look on their face. For Grind3h"
+    src="resources/2022art/FauxRender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Grind3h</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    src="resources/2022art/emotakhwif.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Auto (on the left) is waving to Niko. Featuring megagem_art's character."
+    src="resources/2022art/AutoRender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">megagem_art</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A comparision of 3D Blueberri. The left one was created in 2022, while the right one was created in 2021. For bozosart"
+    src="resources/2022art/BerryComparision.png" width="400" onclick="showImgModal(this)">
+    <div class="label">bozosart</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A render card of a Wooly Objie. For kirbyzaz"
+    src="resources/2022art/WoolyRenderCard.png" width="400" onclick="showImgModal(this)">
+    <div class="label">kirbyzaz</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Magnitchi is drowning in the water with Snowscarf telling him to &quot;eat the water&quot;. This is a 3D recreation of a collab between Kirbyzaz and Snowby3D."
+    src="resources/2022art/eatthewater.png" width="400" onclick="showImgModal(this)">
+    <div class="label">kirbyzaz, Snowby3D</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A gallery of 4 pictures featuring Snowscarf in several poses. For Snowby3D"
+    src="resources/2022art/4SnowScarfs.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Snowby3D</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A Puff is standing on the laptop, waving to the viewer. For kirbyzaz"
+    src="resources/2022art/Puffcomputerrender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">kirbyzaz</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A render card of Stevie. For Max Andrew"
+    src="resources/2022art/StevieRenderCard.png" width="400" onclick="showImgModal(this)">
+    <div class="label">MA_Does_Art</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Takhwif is hugging Roboto. This was made when AmigaX was on his depression period. &quot;In the past, sometimes I may not get along. But I'm proud of how much I've helped you in general and at this point, I think you're my best friend. I hope you'll recover - mentally.. and physically. Stay safe, Amiga. You deserve a hug.&quot;"
+    src="resources/2022art/amigalove.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A silhouette of Takhwif can be seen watching the dark, vast landscape. This was created during a period of depression."
+    src="resources/2022art/saddd.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt='3D render of Boingy, an Objie that originally came from an <a href="https://youtu.be/YlAhRJjOhDg?si=MkZE2sFBkH49hm4a&t=17">Amiga demo.</a> Objies originally created by kirbyzaz. For AmigaX'
+    src="resources/2022art/BoingyRender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    src="resources/2022art/Axaaxa_hug.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AOxOA395</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="This was made when AmigaX got a vaccination for the pandemic."
+    src="resources/2022art/amiga_got_a_vaccine.gif" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Takhwif is constructing and painting a hat for a cuboid."
+    src="resources/2022art/Paint_Cube.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A render card of Magnitchi. For Kirbyzaz"
+    src="resources/2022art/MagnetRenders.png" width="400" onclick="showImgModal(this)">
+    <div class="label">kirbyzaz</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    src="resources/2022art/MAGNETTEST.png" width="400" onclick="showImgModal(this)">
+    <div class="label">kirbyzaz</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Former banner for AmigaX"
+    src="resources/2022art/AmigaXBanner.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Takhwif is on a stroll with Hafiz, walking like nothing has happened to him."
+    src="resources/2022art/hafiznormalzoruarender.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Takhwif is taking control of his corpse. He's able to speak normally as well. Hafiz (on the right) looks satisfied."
+    src="resources/2022art/hafiznormalzoruarneder.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Hafiz is showing the preserved corpse of Takhwif. He is surprised that Hafiz was able to preserve his body."
+    src="resources/2022art/hafizzoruarender.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3D render of Opimi (2022 design) showing the starry night sky to the viewer. For AOxOA395"
+    src="resources/2022art/opimirender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AOxOA395</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A render card of Puff. For kirbyzaz"
+    src="resources/2022art/Puffz.png" width="400" onclick="showImgModal(this)">
+    <div class="label">kirbyzaz</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A gallery of 4 pictures featuring James in several poses. For LittleSobBlue"
+    src="resources/2022art/4_James.png" width="400" onclick="showImgModal(this)">
+    <div class="label">LittleSobBlue</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A 3D recreation of one of LittleSobBlue's comics, featuring James who struggles to carry a dumbbell with Jordan helping him."
+    src="resources/2022art/sobframes.png" width="400" onclick="showImgModal(this)">
+    <div class="label">LittleSobBlue</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="James (on the right) and Jordan are on the computer watching LittleSobBlue's follower count hit the thousands. For LittleSobBlue"
+    src="resources/2022art/soblaptoprender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">LittleSobBlue</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A 3D demo of a snail character, who was created by Grind3h"
+    src="resources/2022art/snails.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Grind3h</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="My own take on Snowby. For Snowby3D"
+    src="resources/2022art/snowbyrender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Snowby3D</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Takhwif is bowing to Jordan. LittleSobBlue inspired the design of the 3D model for Takhwif, so this is a way of saying thank you to him."
+    src="resources/2022art/THANK.png" width="400" onclick="showImgModal(this)">
+    <div class="label">LittleSobBlue</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Takhwif is holding Niko."
+    src="resources/2022art/Zoura_Hold_Kirb_OWO.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="The first render with Takhwif, featuring Jordan (by LittleSobBlue)"
+    src="resources/2022art/HisuianRender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">LittleSobBlue</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Blueberri (on the right) is waving to Niko. Featuring bozosart's character."
+    src="resources/2022art/orbs.png" width="400" onclick="showImgModal(this)">
+    <div class="label">bozosart</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="This is the first version of Niko. He's holding his picture frame. I asked Tsukomasi to make a Kirby OC for me."
+    src="resources/2022art/NikoRender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Tsukomasi</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A 3D demo of Gloria, who was created by TorchicMaster"
+    src="resources/2022art/GloriaRender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">TorchicMaster</div></div>
 
   </div>
   <div class="footer">
     <div class="footertext">This website was hosted using <a href="https://pages.github.com/">GitHub Pages</a></div>
   </div>
+  <script src="imgmodal.js"></script>
 </body>
 </html>

@@ -52,6 +52,41 @@ body {
   padding: 1em;
 }
 
+#modal {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #000000cc;
+}
+
+#modal_img {
+  width: 100%;
+  height: 100%;
+  background-image: url(resources/2025art/lopoly_pavlova.png);
+  background-position-x: center;
+  background-position-y: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#alt_txt {
+  font-size: 16pt;
+  padding: 16px;
+  background: #000;
+  color: #fff;
+}
+
+#close {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
 a {color: var(--link);}
 
 h1,
@@ -90,7 +125,7 @@ ul {text-align: left;}
   top: 10px;
   position: sticky;
   background: var(--surface);
-  z-index: 4;
+  z-index: 1;
 }
 
 .menubutton {

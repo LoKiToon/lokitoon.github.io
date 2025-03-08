@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>_lounge</title>
   <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon.png">
@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
+  <div id="modal">
+    <img id="close" src="resources/Close.svg" onclick="hideImgModal()" draggable="false">
+    <div id="modal_img"></div>
+    <div id="alt_txt"></div>
+  </div>
   <div class="menu">
     <div class="windowtitle">Menu</div>
     <a class="menubutton" href="portfolio.html" title="Back" draggable="false"><img src="resources/Back.svg" draggable="false"></a>
@@ -17,34 +22,120 @@
     <div class="windowtitle">2021 Art (Pictures)</div>
 
     <h3>Names of artist's featured characters are shown below pictures.</h3>
+    <h3>Click on a picture to zoom in. (and view details about it)</h3>
     <hr>
 
-    <div class="media"><img loading="lazy" src="resources/2021art/SPACEMINT.png" width="400"><a class="label">mintpaws</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/jordan.png" width="400"><a class="label">LittleSobBlue</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/eeee.png" width="400"></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/smallcomputer.png" width="400"><a class="label">mintpaws</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/mints.jpg" width="400"><a class="label">mintpaws</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/Melon%20Render.png" width="400"><a class="label">sparkmelon</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/cameratwo.png" width="400"><a class="label">eonstro</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/robotorender.png" width="400"><a class="label">AmigaX</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/Stelele.png" width="400"><a class="label">???</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/MarshCup.png" width="400"><a class="label">fireiscold45</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/MarshAngry.png" width="400"><a class="label">fireiscold45</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/MarshConfused.png" width="400"><a class="label">fireiscold45</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/MarshJump.png" width="400"><a class="label">fireiscold45</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/MarshWave.png" width="400"><a class="label">fireiscold45</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/EonSun.png" width="400"><a class="label">eonstro</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/FireworkEon.png" width="400"><a class="label">eonstro</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/berries.png" width="400"><a class="label">bozosart</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/ezgif.com-gif-maker (5).gif" width="400"><a class="label">bozosart</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/ezgif.com-gif-maker (4).gif" width="400"><a class="label">bozosart</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/ezgif.com-gif-maker (3).gif" width="400"><a class="label">bozosart</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/starcat.png" width="400"><a class="label">Starcat_JP</a></div>
-    <div class="media"><img loading="lazy" src="resources/2021art/Cardboard.png" width="400"><a class="label">Starcat_JP</a></div>
+    <div class="media"><img
+    loading="lazy"
+    alt="Mint in space. For mintpaws"
+    src="resources/2021art/SPACEMINT.png" width="400" onclick="showImgModal(this)">
+    <div class="label">mintpaws</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A render card of Jordan. For LittleSobBlue"
+    src="resources/2021art/jordan.png" width="400" onclick="showImgModal(this)">
+    <div class="label">LittleSobBlue</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A picture showing 2D Cosmo next to a 3D version of him. This was a demonstration of my Blender skills."
+    src="resources/2021art/eeee.png" width="400" onclick="showImgModal(this)"></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Mint is staring at a miniature Atari 2600. For mintpaws"
+    src="resources/2021art/smallcomputer.png" width="400" onclick="showImgModal(this)">
+    <div class="label">mintpaws</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A render card of Mint. One of the first render cards I made. For mintpaws"
+    src="resources/2021art/mints.jpg" width="400" onclick="showImgModal(this)">
+    <div class="label">mintpaws</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A 3D demo of Melon, who was created by sparkmelon"
+    src="resources/2021art/Melon_Render.png" width="400" onclick="showImgModal(this)">
+    <div class="label">sparkmelon</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Eon is sitting at a lounge place. One of the first renders created using fSpy."
+    src="resources/2021art/cameratwo.png" width="400" onclick="showImgModal(this)">
+    <div class="label">eonstro</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="An early 3D remake of Roboto. For AmigaX"
+    src="resources/2021art/robotorender.png" width="400" onclick="showImgModal(this)">
+    <div class="label">AmigaX</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3D render of Stelele. I forgot who made this character. ( if you are the owner, reach out on github! )"
+    src="resources/2021art/Stelele.png" width="400" onclick="showImgModal(this)">
+    <div class="label">???</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="A gallery of 5 pictures featuring Marsh in several poses. For fireiscold45"
+    src="resources/2021art/Marsh_gallery.png" width="400" onclick="showImgModal(this)">
+    <div class="label">fireiscold45</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Eon is sitting on the vast landscape. For eonstro"
+    src="resources/2021art/EonSun.png" width="400" onclick="showImgModal(this)">
+    <div class="label">eonstro</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Eon is watching the fireworks outside. For eonstro"
+    src="resources/2021art/FireworkEon.png" width="400" onclick="showImgModal(this)">
+    <div class="label">eonstro</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="4 Blueberris with different colors. For bozosart"
+    src="resources/2021art/berries.png" width="400" onclick="showImgModal(this)">
+    <div class="label">bozosart</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Blueberri is sleeping. For bozosart"
+    src="resources/2021art/bb_sleep.gif" width="400" onclick="showImgModal(this)">
+    <div class="label">bozosart</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Blueberri walk cycle. For bozosart"
+    src="resources/2021art/bb_walk.gif" width="400" onclick="showImgModal(this)">
+    <div class="label">bozosart</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="Blueberri is waving to the viewer. One of my earliest Blender animations. For bozosart"
+    src="resources/2021art/bb_wave.gif" width="400" onclick="showImgModal(this)">
+    <div class="label">bozosart</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3D remake of Starcat, who was originally made by Starcat_JP. One of my earliest 3D models."
+    src="resources/2021art/starcat.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Starcat_JP</div></div>
+    
+    <div class="media"><img
+    loading="lazy"
+    alt="3D remake of Cardboard, who was originally made by Starcat_JP. One of my earliest 3D models."
+    src="resources/2021art/Cardboard.png" width="400" onclick="showImgModal(this)">
+    <div class="label">Starcat_JP</div></div>
 
   </div>
   <div class="footer">
     <div class="footertext">This website was hosted using <a href="https://pages.github.com/">GitHub Pages</a></div>
   </div>
+  <script src="imgmodal.js"></script>
 </body>
 </html>
