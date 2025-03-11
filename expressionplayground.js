@@ -1,3 +1,153 @@
+// import json from characters.js
+const charactersJSON = JSON.parse(chaJSONdata);
+const charaDdElement = document.getElementById("characterDropdown");
+
+const canvasElement = document.getElementById("canvas");
+const ctx = canvasElement.getContext("2d");
+
+// init canvas
+canvasElement.width = 512;
+canvasElement.height = 512;
+
+function loadCharacter(chaIndex) {
+  ctx.clearRect(0, 0, 512, 512);
+  // show character
+  const mainImg = new Image(512, 512);
+  mainImg.src = `resources/faces/${charactersJSON.characters[chaIndex].chaName}/Main.png`;
+  mainImg.addEventListener("load", (e) => {
+    ctx.drawImage(mainImg, 0, 0);
+  });
+}
+
+function changeExpression(chaIndex, mouthIndex, leftEyeIndex, rightEyeIndex) {
+  const chaData = charactersJSON.characters[chaIndex];
+  const chaName = charactersJSON.characters[chaIndex].chaName;
+  const chaEyeDiv = chaData.chaEyeDiv;
+  const chaMouthDiv = chaData.chaMouthDiv;
+
+  // draw eyes
+  if (charactersJSON.characters[chaIndex].chaSymmetricalEyes) {
+    const eyeImg = new Image();
+    eyeImg.src = `resources/faces/${chaName}/EyeSheet.png`;
+    eyeImg.addEventListener("load", (e) => {
+      // draw the left eye
+      ctx.drawImage(
+        eyeImg,
+        Math.floor(leftEyeIndex * (eyeImg.width / chaEyeDiv)),
+        0,
+        Math.floor(eyeImg.width / chaEyeDiv),
+        eyeImg.height,
+        chaData.chaLEyeXOff,
+        chaData.chaLEyeYOff,
+        Math.floor(eyeImg.width / chaEyeDiv),
+        eyeImg.height
+      );
+
+      // flip canvas, draw the right eye
+      ctx.save();
+      ctx.scale(-1, 1);
+
+      ctx.drawImage(
+        eyeImg,
+        Math.floor(leftEyeIndex * (eyeImg.width / chaEyeDiv)),
+        0,
+        Math.floor(eyeImg.width / chaData.chaEyeDiv),
+        eyeImg.height,
+        chaData.chaLEyeXOff - 512,
+        chaData.chaLEyeYOff,
+        Math.floor(eyeImg.width / chaData.chaEyeDiv),
+        eyeImg.height
+      );
+
+      ctx.restore();
+    });
+  } else {
+    const leftEyeImg = new Image();
+    leftEyeImg.src = `resources/faces/${chaName}/LeftEyeSheet.png`;
+    leftEyeImg.addEventListener("load", (e) => {
+      // draw the left eye
+      ctx.drawImage(
+        leftEyeImg,
+        Math.floor(leftEyeIndex * (leftEyeImg.width / chaEyeDiv)),
+        0,
+        Math.floor(leftEyeImg.width / chaEyeDiv),
+        leftEyeImg.height,
+        chaData.chaLEyeXOff,
+        chaData.chaLEyeYOff,
+        Math.floor(leftEyeImg.width / chaEyeDiv),
+        leftEyeImg.height
+      );
+    });
+    
+    const rightEyeImg = new Image();
+    rightEyeImg.src = `resources/faces/${chaName}/RightEyeSheet.png`;
+    rightEyeImg.addEventListener("load", (e) => {
+      // draw the left eye
+      ctx.drawImage(
+        rightEyeImg,
+        Math.floor(rightEyeIndex * (rightEyeImg.width / chaEyeDiv)),
+        0,
+        Math.floor(rightEyeImg.width / chaEyeDiv),
+        rightEyeImg.height,
+        chaData.chaREyeXOff,
+        chaData.chaREyeYOff,
+        Math.floor(rightEyeImg.width / chaEyeDiv),
+        rightEyeImg.height
+      );
+    });
+  }
+
+  // draw mouth
+  const mouthImg = new Image();
+    mouthImg.src = `resources/faces/${chaName}/MouthSheet.png`;
+    mouthImg.addEventListener("load", (e) => {
+      // draw the left eye
+      ctx.drawImage(
+        mouthImg,
+        Math.floor(mouthIndex * (mouthImg.width / chaMouthDiv)),
+        0,
+        Math.floor(mouthImg.width / chaMouthDiv),
+        mouthImg.height,
+        chaData.chaMouthXOff,
+        chaData.chaMouthYOff,
+        Math.floor(mouthImg.width / chaMouthDiv),
+        mouthImg.height
+      );
+    });
+}
+
+// load character names from json and add them to the dropdown
+for (let i = 0; i < charactersJSON.characters.length; i++) {
+  const chaName = charactersJSON.characters[i].chaName;
+
+  const menuElement = document.createElement("div");
+  menuElement.innerText = chaName;
+  menuElement.onclick = () => loadCharacter(i);
+  charaDdElement.appendChild(menuElement);
+}
+
+function fltr() {
+  const input = document.getElementById("dd-search");
+  const filter = input.value.toUpperCase();
+  const div = document.getElementById("characterDropdown");
+  const a = div.getElementsByTagName("div");
+  for (let i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches(".dd-button") && !event.target.matches("#dd-search")) {
+    if (charaDdElement.classList.contains("show")) {
+      charaDdElement.classList.toggle("show");
+    }
+  }
+};
 //const models = document.getElementsByClassName("model")
 //let a, b, i, modelName, modelParts, slider
 //

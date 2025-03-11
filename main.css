@@ -153,13 +153,101 @@ ul {text-align: left;}
     margin: 20px;
 }
 
-.footer {
-  text-align: center;
-  font-size: 12px;
+button {
+  background: var(--surface);
+  color: var(--text);
+  
+  border: none;
+  border-radius: 10px;
+  
+  box-shadow: 0 0 5px #00000055;
+  margin: 5px;
+  padding: 20px;
+  
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16pt;
+  line-height: .5;
 }
 
-.footertext {
-  font-family: monospace;
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dd-content {
+  display: none;
+  position: absolute;
+  overflow-y: scroll;
+  
+  padding: 5px;
+  max-height: 400px;
+  
+  background: var(--surface);
+  color: var(--text);
+  
+  border-radius: 10px 0 0 10px;
+  
+  box-shadow: 0 0 5px #00000055;
+  
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16pt;
+  line-height: 1.75;
+}
+
+.dd-content div {
+  color: var(--text);
+
+  padding: 5px;
+  
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16pt;
+  line-height: 1;
+}
+
+.dd-content div:hover {
+  background: var(--hover);
+}
+
+.dd-content div:active {
+  background: var(--bg);
+}
+
+#dd-search {
+  box-sizing: border-box;
+  
+  padding: 10px;
+  margin-bottom: 5px;
+  
+  background: var(--bg);
+  color: var(--text);
+  
+  border: none;
+  border-radius: 10px 10px 0 0;
+
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12pt;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+  
+  padding: 20px;
+  width: 512px;
+  height: 512px;
+  
+  border-radius: 10px;
+  box-shadow: 0 0 5px #00000055;
+  
+  text-decoration: none;
+  color: var(--text);
+  line-height: 1;
+}
+
+.show {
+  display: block;
 }
 
 .folder {
@@ -190,8 +278,15 @@ ul {text-align: left;}
 }
 
 .folder:hover,
-.publicmodel:hover {
+.publicmodel:hover,
+button:hover {
   background: var(--hover);
+}
+
+.folder:active,
+.publicmodel:active,
+button:active {
+  background: var(--surface);
 }
 
 .media {
@@ -217,32 +312,11 @@ ul {text-align: left;}
   border-bottom: solid 1mm var(--accent);
 }
 
-/*
-.Jordan,
-.Blueberri {
-  width: 512px;
-  height: 512px;
-  margin: 10px;
+.footer {
+  text-align: center;
+  font-size: 12px;
 }
 
-.JordanMAIN,
-.BlueberriMAIN {
-  position: absolute;
-  z-index: 1;
+.footertext {
+  font-family: monospace;
 }
-
-
-.JordanEye {
-  position: absolute;
-  z-index: 2;
-}
-
-.JordanMouth {
-  position: absolute;
-  z-index: 3;
-}
-
-.BlueberriFace {
-  position: absolute;
-  z-index: 2;
-}*/

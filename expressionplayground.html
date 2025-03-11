@@ -16,13 +16,23 @@
     <div class="windowtitle">Expression Playground</div>
     <div class="mediagroup">
       <div class="wrapper">
-          <h2>Lorem Ipsum</h2>
-          <img width="512" height="512">
+        <div class="dropdown">
+          <button class="dd-button" onclick="charaDdElement.classList.toggle('show');">Choose character</button>
+          <div id="characterDropdown" class="dd-content">
+            <input type="text" placeholder="search character..." id="dd-search" onkeyup="fltr()">
+          </div>
+        </div>
+        
+        <canvas id="canvas"></canvas>
+        
+        <div class="slick"></div>
       </div>
     </div>
   </div>
   <div class="footer">
     <div class="footertext">This website was hosted using <a href="https://pages.github.com/">GitHub Pages</a></div>
   </div>
+  <script src="characters.js"></script>
+  <script src="expressionplayground.js"></script>
 </body>
 </html>
