@@ -12,7 +12,12 @@ const menuButtons = [
 for (let i = 0; i <= menuButtons.length - 1; i++) {
   let link = document.createElement("a")
   link.className = "menubutton"
-  link.href = menuButtons[i][0]
+
+  // don't link the button if we already went to the page
+  if (!document.URL.includes(menuButtons[i][0])) {
+    link.href = menuButtons[i][0]
+  }
+
   link.title = menuButtons[i][2]
   link.draggable = false
   menuElement.appendChild(link)
