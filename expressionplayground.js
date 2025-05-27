@@ -1,6 +1,7 @@
 // import json from characters.js
 const charactersJSON = JSON.parse(chaJSONdata);
 const charaDdElement = document.getElementById("characterDropdown");
+const charaSliders = document.getElementById("characterSliders");
 
 const canvasElement = document.getElementById("canvas");
 const ctx = canvasElement.getContext("2d");
@@ -10,8 +11,33 @@ canvasElement.width = 512;
 canvasElement.height = 512;
 
 function loadCharacter(chaIndex) {
-  ctx.clearRect(0, 0, 512, 512);
+  charaSliders.innerHTML = "";
+  // load sliders
+  
+  const eyeLabel = document.createElement("span");
+  eyeLabel.innerText = "Eye Control";
+  charaSliders.appendChild(eyeLabel);
+  
+  const l_EyeSlider = document.createElement("input");
+  l_EyeSlider.type = "range";
+  l_EyeSlider.value = 0;
+  l_EyeSlider.max = charactersJSON.characters[chaIndex].chaEyeDiv - 1;
+  l_EyeSlider.oninput = function() { changeEyeExpression(chaIndex, this.value); };
+  charaSliders.appendChild(l_EyeSlider);
+  
+  const mouthLabel = document.createElement("span");
+  mouthLabel.innerText = "Mouth Control";
+  charaSliders.appendChild(mouthLabel);
+  
+  const mouthSlider = document.createElement("input");
+  mouthSlider.type = "range";
+  mouthSlider.value = 0;
+  mouthSlider.max = charactersJSON.characters[chaIndex].chaMouthDiv - 1;
+  mouthSlider.oninput = function() { changeMouthExpression(chaIndex, this.value); };
+  charaSliders.appendChild(mouthSlider);
+  
   // show character
+  ctx.clearRect(0, 0, 512, 512);
   const mainImg = new Image(512, 512);
   mainImg.src = `resources/faces/${charactersJSON.characters[chaIndex].chaName}/Main.png`;
   mainImg.addEventListener("load", (e) => {
@@ -19,11 +45,10 @@ function loadCharacter(chaIndex) {
   });
 }
 
-function changeExpression(chaIndex, mouthIndex, leftEyeIndex, rightEyeIndex) {
+function changeEyeExpression(chaIndex, leftEyeIndex, rightEyeIndex) {
   const chaData = charactersJSON.characters[chaIndex];
-  const chaName = charactersJSON.characters[chaIndex].chaName;
+  const chaName = chaData.chaName;
   const chaEyeDiv = chaData.chaEyeDiv;
-  const chaMouthDiv = chaData.chaMouthDiv;
 
   // draw eyes
   if (charactersJSON.characters[chaIndex].chaSymmetricalEyes) {
@@ -96,12 +121,15 @@ function changeExpression(chaIndex, mouthIndex, leftEyeIndex, rightEyeIndex) {
       );
     });
   }
+}
 
-  // draw mouth
+function changeMouthExpression(chaIndex, mouthIndex) {
+  const chaData = charactersJSON.characters[chaIndex];
+  const chaMouthDiv = chaData.chaMouthDiv;
+
   const mouthImg = new Image();
-    mouthImg.src = `resources/faces/${chaName}/MouthSheet.png`;
+    mouthImg.src = `resources/faces/${chaData.chaName}/MouthSheet.png`;
     mouthImg.addEventListener("load", (e) => {
-      // draw the left eye
       ctx.drawImage(
         mouthImg,
         Math.floor(mouthIndex * (mouthImg.width / chaMouthDiv)),

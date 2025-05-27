@@ -146,11 +146,11 @@ ul {text-align: left;}
 }
 
 .wrapper {
-    border: 2px solid var(--separator);
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 1em;
-    margin: 20px;
+  border: 2px solid var(--separator);
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 1em;
+  margin: 20px;
 }
 
 button {
@@ -230,9 +230,10 @@ button {
   font-size: 12pt;
 }
 
-canvas {
-  display: block;
-  margin: auto;
+canvas,
+#characterSliders {
+  display: inline-block;
+  margin: 10px;
   
   padding: 20px;
   width: 512px;
@@ -246,11 +247,17 @@ canvas {
   line-height: 1;
 }
 
+#characterSliders {
+  overflow: hidden;
+  line-height: 2;
+}
+
 .show {
   display: block;
 }
 
-.folder {
+.folder,
+.publicmodel {
   display: inline-block;
   width: 200px;
   height: 200px;
@@ -264,16 +271,8 @@ canvas {
   line-height: 4;
 }
 
-.publicmodel {
-  display: inline-block;
-  margin: 5px;
+.publicmmodel {
   padding: 20px;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 0 5px #00000055;
-  text-decoration: none;
-  color: var(--text);
   line-height: 1;
 }
 
@@ -319,4 +318,75 @@ button:active {
 
 .footertext {
   font-family: monospace;
+}
+
+/* <3 - https://range-input-css.netlify.app/ */
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 98%;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: var(--bg);
+  border-radius: 2px;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -8px; /* Centers thumb on the track */
+  background-color: var(--surface);
+  box-shadow: 0 0 5px #00000055;
+  border-radius: 2px;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: var(--hover);
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 3px solid var(--accent);
+  outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: var(--bg);
+  border-radius: 2px;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  background-color: var(--surface);
+  box-shadow: 0 0 5px #00000055;
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 2px;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  background-color: var(--hover);
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  outline: 3px solid var(--accent);
+  outline-offset: 0.125rem;
 }

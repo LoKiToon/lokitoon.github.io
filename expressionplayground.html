@@ -16,16 +16,17 @@
     <div class="windowtitle">Expression Playground</div>
     <div class="mediagroup">
       <div class="wrapper">
+        
         <div class="dropdown">
           <button class="dd-button" onclick="charaDdElement.classList.toggle('show');">Choose character</button>
           <div id="characterDropdown" class="dd-content">
             <input type="text" placeholder="search character..." id="dd-search" onkeyup="fltr()">
           </div>
         </div>
+        <br>
+        <canvas id="canvas"></canvas>        
+        <div id="characterSliders"></div>
         
-        <canvas id="canvas"></canvas>
-        
-        <div class="slick"></div>
       </div>
     </div>
   </div>
