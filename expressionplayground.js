@@ -11,50 +11,61 @@ canvasElement.width = 512;
 canvasElement.height = 512;
 
 function loadCharacter(chaIndex) {
-  charaSliders.innerHTML = "";
+  const chaData = charactersJSON.characters[chaIndex];
+  let chaEyeDiv, chaMouthDiv;
+  // default values
+  if (typeof chaData.chaEyeDiv !== 'undefined') { chaEyeDiv = chaData.chaEyeDiv; } else { chaEyeDiv = 8; }
+  if (typeof chaData.chaMouthDiv !== 'undefined') { chaMouthDiv = chaData.chaMouthDiv; } else { chaMouthDiv = 8; }
+  
   // load sliders
+  charaSliders.innerHTML = "";
   
-  const eyeLabel = document.createElement("span");
-  eyeLabel.innerText = "Eye Control";
-  charaSliders.appendChild(eyeLabel);
-  
-  const l_EyeSlider = document.createElement("input");
-  l_EyeSlider.type = "range";
-  l_EyeSlider.value = 0;
-  l_EyeSlider.max = charactersJSON.characters[chaIndex].chaEyeDiv - 1;
-  l_EyeSlider.oninput = function() { changeEyeExpression(chaIndex, this.value); };
-  charaSliders.appendChild(l_EyeSlider);
-  
-  const mouthLabel = document.createElement("span");
-  mouthLabel.innerText = "Mouth Control";
-  charaSliders.appendChild(mouthLabel);
-  
-  const mouthSlider = document.createElement("input");
-  mouthSlider.type = "range";
-  mouthSlider.value = 0;
-  mouthSlider.max = charactersJSON.characters[chaIndex].chaMouthDiv - 1;
-  mouthSlider.oninput = function() { changeMouthExpression(chaIndex, this.value); };
-  charaSliders.appendChild(mouthSlider);
+  if (chaData.chaHasEyes) {
+    const eyeLabel = document.createElement("span");
+    eyeLabel.innerText = "eye control";
+    charaSliders.appendChild(eyeLabel);
+    
+    const eyeSlider = document.createElement("input");
+    eyeSlider.type = "range";
+    eyeSlider.value = 0;
+    eyeSlider.max = chaEyeDiv - 1;
+    eyeSlider.oninput = function() { changeEyeExpression(chaIndex, this.value); };
+    charaSliders.appendChild(eyeSlider);
+  }
+
+  if (chaData.chaHasMouth) {
+    const mouthLabel = document.createElement("span");
+    mouthLabel.innerText = "mouth control";
+    charaSliders.appendChild(mouthLabel);
+    
+    const mouthSlider = document.createElement("input");
+    mouthSlider.type = "range";
+    mouthSlider.value = 0;
+    mouthSlider.max = chaMouthDiv - 1;
+    mouthSlider.oninput = function() { changeMouthExpression(chaIndex, this.value); };
+    charaSliders.appendChild(mouthSlider);
+  }
   
   // show character
   ctx.clearRect(0, 0, 512, 512);
   const mainImg = new Image(512, 512);
-  mainImg.src = `resources/faces/${charactersJSON.characters[chaIndex].chaName}/Main.png`;
-  mainImg.addEventListener("load", (e) => {
-    ctx.drawImage(mainImg, 0, 0);
-  });
+  mainImg.src = `resources/faces/${chaData.chaName}/Main.png`;
+  mainImg.onload = function() { ctx.drawImage(mainImg, 0, 0); };
 }
 
 function changeEyeExpression(chaIndex, leftEyeIndex, rightEyeIndex) {
   const chaData = charactersJSON.characters[chaIndex];
   const chaName = chaData.chaName;
-  const chaEyeDiv = chaData.chaEyeDiv;
-
+  let chaEyeDiv, chaSymmetricalEyes;
+  // default values
+  if (typeof chaData.chaEyeDiv !== 'undefined') { chaEyeDiv = chaData.chaEyeDiv; } else { chaEyeDiv = 8; }
+  if (typeof chaData.chaSymmetricalEyes !== 'undefined') { chaSymmetricalEyes = chaData.chaSymmetricalEyes; } else { chaSymmetricalEyes = true; }
+  
   // draw eyes
-  if (charactersJSON.characters[chaIndex].chaSymmetricalEyes) {
+  if (chaSymmetricalEyes) {
     const eyeImg = new Image();
     eyeImg.src = `resources/faces/${chaName}/EyeSheet.png`;
-    eyeImg.addEventListener("load", (e) => {
+    eyeImg.onload = function() {
       // draw the left eye
       ctx.drawImage(
         eyeImg,
@@ -76,20 +87,20 @@ function changeEyeExpression(chaIndex, leftEyeIndex, rightEyeIndex) {
         eyeImg,
         Math.floor(leftEyeIndex * (eyeImg.width / chaEyeDiv)),
         0,
-        Math.floor(eyeImg.width / chaData.chaEyeDiv),
+        Math.floor(eyeImg.width / chaEyeDiv),
         eyeImg.height,
         chaData.chaLEyeXOff - 512,
         chaData.chaLEyeYOff,
-        Math.floor(eyeImg.width / chaData.chaEyeDiv),
+        Math.floor(eyeImg.width / chaEyeDiv),
         eyeImg.height
       );
 
       ctx.restore();
-    });
+    };
   } else {
     const leftEyeImg = new Image();
     leftEyeImg.src = `resources/faces/${chaName}/LeftEyeSheet.png`;
-    leftEyeImg.addEventListener("load", (e) => {
+    leftEyeImg.onload = function() {
       // draw the left eye
       ctx.drawImage(
         leftEyeImg,
@@ -102,11 +113,11 @@ function changeEyeExpression(chaIndex, leftEyeIndex, rightEyeIndex) {
         Math.floor(leftEyeImg.width / chaEyeDiv),
         leftEyeImg.height
       );
-    });
+    };
     
     const rightEyeImg = new Image();
     rightEyeImg.src = `resources/faces/${chaName}/RightEyeSheet.png`;
-    rightEyeImg.addEventListener("load", (e) => {
+    rightEyeImg.onload = function() {
       // draw the left eye
       ctx.drawImage(
         rightEyeImg,
@@ -119,13 +130,15 @@ function changeEyeExpression(chaIndex, leftEyeIndex, rightEyeIndex) {
         Math.floor(rightEyeImg.width / chaEyeDiv),
         rightEyeImg.height
       );
-    });
+    };
   }
 }
 
 function changeMouthExpression(chaIndex, mouthIndex) {
   const chaData = charactersJSON.characters[chaIndex];
-  const chaMouthDiv = chaData.chaMouthDiv;
+  let chaMouthDiv;
+  // default values
+  if (typeof chaData.chaMouthDiv !== 'undefined') { chaMouthDiv = chaData.chaMouthDiv; } else { chaMouthDiv = 8; }
 
   const mouthImg = new Image();
     mouthImg.src = `resources/faces/${chaData.chaName}/MouthSheet.png`;
@@ -150,7 +163,7 @@ for (let i = 0; i < charactersJSON.characters.length; i++) {
 
   const menuElement = document.createElement("div");
   menuElement.innerText = chaName;
-  menuElement.onclick = () => loadCharacter(i);
+  menuElement.onclick = function() { loadCharacter(i); };
   charaDdElement.appendChild(menuElement);
 }
 
@@ -176,54 +189,3 @@ window.onclick = function (event) {
     }
   }
 };
-//const models = document.getElementsByClassName("model")
-//let a, b, i, modelName, modelParts, slider
-//
-//for (a = 0; a < models.length; a++) {
-//    for (b = 0; b < models[a].getElementsByClassName("slidecontainer").length; b++) {
-//        slider = models[a].getElementsByClassName("slidecontainer")[b].querySelector("input")
-//        preImg(models[a].querySelector("div").className, slider.max, slider.id)
-//    }
-//}
-//
-////face changing
-//for (a = 0; a < models.length; a++) {
-//    for (b = 0; b < models[a].getElementsByClassName("slidecontainer").length; b++) {
-//        models[a].getElementsByClassName("slidecontainer")[b].querySelector("input").addEventListener("input", function () {
-//            modelName = this.parentElement.parentElement.querySelector("div").className
-//            modelParts = this.parentElement.parentElement.querySelector("div").querySelectorAll("div")
-//            if (this.id == "Eye") {
-//                modelParts[1].querySelector("img").src = `resources/faces/${modelName}/${modelName}Eye${this.value}.png`
-//            }
-//            if (this.id == "Mouth") {
-//                modelParts[2].querySelector("img").src = `resources/faces/${modelName}/${modelName}Mouth${this.value}.png`
-//            }
-//            if (this.id == "Face") {
-//                modelParts[1].querySelector("img").src = `resources/faces/${modelName}/${modelName}Face${this.value}.png`
-//            }
-//        }, false)
-//    }
-//}
-//
-//
-//
-//// get the element with the id "spritesheet"
-//const spritesheet = document.getElementById("spritesheet");
-//// find a slider in the page
-//const slider = document.querySelector("input");
-//// create a variable for easy reference
-//let index;
-//// the gap of pixels for each part of the image. automatically set to element's width
-//const cellWidth = spritesheet.offsetWidth
-//
-//slider.addEventListener('input', function () {
-//    // index variable will be the slider's value
-//    index = slider.value;
-//    // now to the advanced part.
-//    // when index reaches 6, loop back to 0.
-//    // multiply that value negatively by the cell width.
-//    spritesheet.style.backgroundPositionX = `${index % 6 * -cellWidth}px`
-//    // when index reaches 6, count up by 1.
-//    // multiply that value negatively by the cell height. will always be 400 px.
-//    spritesheet.style.backgroundPositionY = `${Math.floor(index / 6) * -400}px`
-//}, false);
