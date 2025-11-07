@@ -12,9 +12,10 @@
     --hover: #333;
   }
 
-  .menubutton:hover {
-    background: var(--hover);
-  }
+  .menubutton:hover,
+  .menubutton.active { background: var(--hover); }
+
+  .totop { background-image: url("resources/ScrollTop.svg"); }
 }
 
 @media (prefers-color-scheme: light) {
@@ -29,13 +30,12 @@
     --hover: #ddd;
   }
 
-  .menubutton {
-    filter: invert(100%);
-  }
+  .menubutton { filter: invert(100%); }
 
-  .menubutton:hover {
-    background: #222;
-  }
+  .menubutton:hover,
+  .menubutton.active { background: var(--text); }
+
+  .totop { background-image: url("resources/ScrollTop-light.svg"); }
 }
 
 html {
@@ -43,13 +43,13 @@ html {
   user-select: none;
   color: var(--text);
   font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-size: 16px;
+  font-size: 16pt;
   line-height: 1;
-  margin: 1px;
-  padding: 1em;
+  max-width: 4096px;
 }
 
 #modal {
@@ -67,7 +67,6 @@ body {
 #modal_img {
   width: 100%;
   height: 100%;
-  background-image: url(resources/2025art/lopoly_pavlova.png);
   background-position-x: center;
   background-position-y: center;
   background-size: contain;
@@ -85,31 +84,45 @@ body {
   cursor: pointer;
   position: absolute;
   right: 0;
+  z-index: 1;
 }
 
-a {color: var(--link);}
+a { color: var(--link); }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 100;
   line-height: 1;
 }
 
-hr {border: 1px solid var(--separator);}
+hr { border: 1px solid var(--separator); }
 
-p {font-size: 16pt;}
+p { font-size: 16pt; }
 
-ul {text-align: left;}
+ul { text-align: left; }
+
+.totop {
+  display: none;
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--surface);
+  box-shadow: 0 0 5px #00000022;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.totop:hover {
+  background-color: var(--hover);
+}  
 
 .main,
 .menu {
   background: var(--surface);
   box-shadow: 0 0 5px #00000022;
-  font-size: 16px;
+  font-size: 14pt;
   line-height: 1.5;
   margin: 1em;
   overflow: auto;
@@ -117,23 +130,22 @@ ul {text-align: left;}
   text-align: center;
 }
 
-.main {
-  padding-bottom: 7px;
-}
+.main { padding-bottom: 7px; }
 
 .menu {
   top: 10px;
   position: sticky;
   background: var(--surface);
+  width: calc-size(fit-content, size + 64px);
   z-index: 1;
 }
 
 .menubutton {
   display: inline-block;
-  transition: 0.1s;
+  margin: 0 2px;
   width: 64px;
   height: 64px;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .windowtitle {
@@ -147,26 +159,33 @@ ul {text-align: left;}
 
 .footer {
   text-align: center;
-  font-size: 12px;
+  font-size: 10pt;
 }
 
-.footertext {
-  font-family: monospace;
-}
+.footertext { font-family: monospace; }
 
-.folder {
+.tablinks {
   display: inline-block;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 0 5px #00000055;
-  margin: 5px;
-  text-decoration: none;
+  min-width: 128px;
+  padding: 4px;
+  border-radius: 4px;
+  background: var(--surface);
   color: var(--text);
   font-size: 35pt;
-  text-align: center;
-  line-height: 4;
+  font-family: inherit;
 }
+
+.tablinks:hover {
+  background: var(--hover);
+  cursor: pointer;
+}
+
+.tablinks.active {
+  background: var(--hover);
+  cursor: default;
+}
+
+.tabcontent { display: none; }
 
 .publicmodel {
   display: inline-block;
@@ -174,25 +193,23 @@ ul {text-align: left;}
   padding: 20px;
   width: 200px;
   height: 200px;
-  border-radius: 10px;
+  border-radius: 4px;
   box-shadow: 0 0 5px #00000055;
   text-decoration: none;
   color: var(--text);
   line-height: 1;
 }
 
-.folder:hover,
-.publicmodel:hover {
-  background: var(--hover);
-}
+.publicmodel:hover { background: var(--hover); }
 
 .media {
   margin: 5px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .label {
-  font-size: 20px;
+  font-size: 16pt;
   font-weight: bold;
   color: var(--text);
   display: block;
@@ -205,6 +222,6 @@ ul {text-align: left;}
   margin-bottom: 3mm;
   padding: 1mm;
   overflow: auto;
-  font-size: 30px;
+  font-size: 30pt;
   border-bottom: solid 1mm var(--accent);
 }
