@@ -3,9 +3,10 @@ const menuButtons = [
   // HREF, Icon, Title
   ["index.html", "resources/Home.svg", "Home"],
   ["portfolio.html", "resources/Folder.svg", "Portfolio"],
+  ["fanart.html", "resources/Palette.svg", "Fan-Art"],
+  ["references.html", "resources/References.svg", "Character References"],
   ["expressionplayground.html", "resources/Faces.svg", "Expression Playground"],
   ["othersites.html", "resources/Website.svg", "My Friends' Websites"],
-  ["fanart.html", "resources/Palette.svg", "Fan-Art"],
   ["downloads.html", "resources/Download.svg", "Public Downloads"]
 ];
 
