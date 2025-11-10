@@ -44,13 +44,10 @@ html {
   color: var(--text);
   font-family: 'Montserrat', sans-serif;
   scroll-behavior: smooth;
+  font-size: 1.25rem;
 }
 
-body {
-  font-size: 16pt;
-  line-height: 1;
-  max-width: 4096px;
-}
+body { max-width: 4096px; }
 
 #modal {
   display: none;
@@ -74,7 +71,6 @@ body {
 }
 
 #alt_txt {
-  font-size: 16pt;
   padding: 16px;
   background: #000;
   color: #fff;
@@ -90,13 +86,11 @@ body {
 a { color: var(--link); }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 100;
+  font-weight: normal;
   line-height: 1;
 }
 
 hr { border: 1px solid var(--separator); }
-
-p { font-size: 16pt; }
 
 ul { text-align: left; }
 
@@ -122,7 +116,6 @@ ul { text-align: left; }
 .menu {
   background: var(--surface);
   box-shadow: 0 0 5px #00000022;
-  font-size: 14pt;
   line-height: 1.5;
   margin: 1em;
   overflow: auto;
@@ -150,19 +143,17 @@ ul { text-align: left; }
 
 .windowtitle {
   font-weight: bold;
-  font-size: 16pt;
-  text-align: center;
+  font-size: .8rem;
   padding: 2px;
   background: var(--window);
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
-.footer {
+footer {
+  font-family: monospace;
   text-align: center;
-  font-size: 10pt;
+  font-size: .8rem;
 }
-
-.footertext { font-family: monospace; }
 
 .tablinks {
   display: inline-block;
@@ -171,8 +162,7 @@ ul { text-align: left; }
   border-radius: 4px;
   background: var(--surface);
   color: var(--text);
-  font-size: 35pt;
-  font-family: inherit;
+  font-size: 1.5rem;
 }
 
 .tablinks:hover {
@@ -209,19 +199,15 @@ ul { text-align: left; }
 }
 
 .label {
-  font-size: 16pt;
   font-weight: bold;
-  color: var(--text);
   display: block;
 }
 
-.titleseparator {
+.t_separator {
   background: var(--surface);
   text-align: center;
   line-height: 1.5;
-  margin-bottom: 3mm;
-  padding: 1mm;
-  overflow: auto;
-  font-size: 30pt;
-  border-bottom: solid 1mm var(--accent);
+  margin: 10px 0;
+  font-size: 1.5rem;
+  border-bottom: solid 2px var(--accent);
 }
