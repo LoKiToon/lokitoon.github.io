@@ -1,53 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
 @media (prefers-color-scheme: dark) {
   html {
-    --window: #121212;
-    --bg: #191919;
-    --text: #d6d6d6;
-    --link: #89b4fa;
-    --surface: #1f1f1f;
-    --separator: #858585;
-    --accent: #f0b77f;
-    --hover: #333;
+    --bg: #1e0d06;
+    --text: #ddd;
+    --surface: #2c160c;
+    --accent: #61613d;
   }
-
-  .menubutton:hover,
-  .menubutton.active { background: var(--hover); }
 
   .totop { background-image: url("resources/ScrollTop.svg"); }
 }
 
 @media (prefers-color-scheme: light) {
   html {
-    --window: #e0e0e0;
-    --bg: #e6e6e6;
+    --bg: #eedbd4;
     --text: #222;
-    --link: #527ec6;
-    --surface: #ededed;
-    --separator: #7a7a7a;
-    --accent: #e99746;
-    --hover: #ddd;
+    --surface: #f3e4de;
+    --accent: #9e9e67;
   }
-
-  .menubutton { filter: invert(100%); }
-
-  .menubutton:hover,
-  .menubutton.active { background: var(--text); }
 
   .totop { background-image: url("resources/ScrollTop-light.svg"); }
 }
 
 html {
-  background: var(--bg);
-  user-select: none;
-  color: var(--text);
-  font-family: 'Montserrat', sans-serif;
-  scroll-behavior: smooth;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 1.25rem;
+  color: var(--text);
+  background: var(--bg);
+  scroll-behavior: smooth;
+  user-select: none;
 }
 
-body { max-width: 4096px; }
+body {
+  margin: 0 auto;
+  max-width: 70em;
+}
 
 #modal {
   display: none;
@@ -83,19 +70,9 @@ body { max-width: 4096px; }
   z-index: 1;
 }
 
-a { color: var(--link); }
+a { color: var(--accent); }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  line-height: 1;
-}
-
-hr { border: 1px solid var(--separator); }
-
-p {
-  margin: 0 20px;
-  text-align: left;
-}
+hr { border: 1px solid var(--accent); }
 
 ul { text-align: left; }
 
@@ -114,73 +91,88 @@ ul { text-align: left; }
 }
 
 .totop:hover {
-  background-color: var(--hover);
-}  
+  background-color: var(--accent);
+}
 
-.main,
+main,
 .menu {
+  border: 2px solid var(--accent);
   background: var(--surface);
-  box-shadow: 0 0 5px #00000022;
+  box-shadow: 4px 4px 0 var(--accent);
   line-height: 1.5;
   margin: 1em;
   overflow: auto;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.main { padding-bottom: 7px; }
-
-.menu {
-  top: 10px;
-  position: sticky;
-  background: var(--surface);
-  width: calc-size(fit-content, size + 64px);
-  z-index: 1;
-}
-
-.menubutton {
-  display: inline-block;
-  margin: 0 2px;
-  width: 64px;
-  height: 64px;
   border-radius: 4px;
 }
 
-.windowtitle {
-  font-weight: bold;
-  font-size: .8rem;
-  padding: 2px;
-  background: var(--window);
-  margin-bottom: 8px;
+main {
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menubutton {
+  display: block;
+  min-width: 5em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  margin: 8px 4px;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.menubutton:hover {
+  background: var(--accent);
+}
+
+.menubutton.active {
+  background: var(--accent);
+  text-decoration: underline;
 }
 
 footer {
   font-family: monospace;
   text-align: center;
   font-size: .8rem;
+  margin: 10px 0;
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
 }
 
 .tablinks {
-  display: inline-block;
   min-width: 128px;
   padding: 4px;
+  margin: 4px;
   border-radius: 4px;
   background: var(--surface);
   color: var(--text);
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .tablinks:hover {
-  background: var(--hover);
+  background: var(--accent);
   cursor: pointer;
 }
 
 .tablinks.active {
-  background: var(--hover);
+  background: var(--accent);
   cursor: default;
+  text-decoration: underline;
 }
 
-.tabcontent { display: none; }
+.tabcontent {
+  display: none;
+  text-align: center;
+}
 
 .publicmodel {
   display: inline-block;
@@ -195,7 +187,7 @@ footer {
   line-height: 1;
 }
 
-.publicmodel:hover { background: var(--hover); }
+.publicmodel:hover { background: var(--accent); }
 
 .media {
   margin: 5px;
@@ -206,13 +198,4 @@ footer {
 .label {
   font-weight: bold;
   display: block;
-}
-
-.t_separator {
-  background: var(--surface);
-  text-align: center;
-  line-height: 1.5;
-  margin: 10px 0;
-  font-size: 1.5rem;
-  border-bottom: solid 2px var(--accent);
 }

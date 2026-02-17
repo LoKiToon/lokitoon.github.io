@@ -3,11 +3,11 @@ const menuButtons = [
   // HREF, Icon, Title
   ["index.html", "resources/Home.svg", "Home"],
   ["portfolio.html", "resources/Folder.svg", "Portfolio"],
-  ["fanart.html", "resources/Palette.svg", "Fan-Art"],
-  ["references.html", "resources/References.svg", "Character References"],
-  ["expressionplayground.html", "resources/Faces.svg", "Expression Playground"],
-  ["othersites.html", "resources/Website.svg", "My Friends' Websites"],
-  ["downloads.html", "resources/Download.svg", "Public Downloads"]
+  ["fanart.html", "resources/Palette.svg", "Fan Art"],
+  ["references.html", "resources/References.svg", "Ref Sheets"],
+  ["expressionplayground.html", "resources/Faces.svg", "Playground"],
+  ["othersites.html", "resources/Website.svg", "Friends' Sites"],
+  ["downloads.html", "resources/Download.svg", "Downloads"]
 ];
 
 for (let i = 0; i <= menuButtons.length - 1; i++) {
@@ -24,9 +24,13 @@ for (let i = 0; i <= menuButtons.length - 1; i++) {
   link.title = menuButtons[i][2]
   link.draggable = false
   menuElement.appendChild(link)
-  
+
   let image = document.createElement("img")
   image.src = menuButtons[i][1]
   image.draggable = false
   link.appendChild(image)
+
+  let label = document.createElement("div")
+  label.innerText = menuButtons[i][2]
+  link.appendChild(label)
 }
