@@ -2,10 +2,19 @@
 
 @media (prefers-color-scheme: dark) {
   html {
-    --bg: #1e0d06;
-    --text: #ddd;
-    --surface: #2c160c;
-    --accent: #61613d;
+    --text: #eee;
+    --surface: #121311;
+    --accent: #605C64;
+    --link: #D0D365;
+
+    background: repeating-linear-gradient(
+      45deg,
+      #D0D365 0em,
+      #D0D365 4em,
+      #90A3AD 4em 8em,
+      #605C64 8em 12em,
+      #080907 12em 16em
+    );
   }
 
   .totop { background-image: url("resources/ScrollTop.svg"); }
@@ -13,10 +22,19 @@
 
 @media (prefers-color-scheme: light) {
   html {
-    --bg: #eedbd4;
-    --text: #222;
-    --surface: #f3e4de;
-    --accent: #9e9e67;
+    --text: #111;
+    --surface: #f1f2f3;
+    --accent: #B3B0B7;
+    --link: #71A8BA;
+
+    background: repeating-linear-gradient(
+      45deg,
+      #71A8BA 0em,
+      #71A8BA 4em,
+      #95AFB8 4em 8em,
+      #B3B0B7 8em 12em,
+      #f7f8f9 12em 16em
+    );
   }
 
   .totop { background-image: url("resources/ScrollTop-light.svg"); }
@@ -26,9 +44,7 @@ html {
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 1.25rem;
   color: var(--text);
-  background: var(--bg);
   scroll-behavior: smooth;
-  user-select: none;
 }
 
 body {
@@ -70,7 +86,7 @@ body {
   z-index: 1;
 }
 
-a { color: var(--accent); }
+a { color: var(--link); }
 
 hr { border: 1px solid var(--accent); }
 
@@ -97,12 +113,12 @@ ul { text-align: left; }
 main,
 .menu {
   border: 2px solid var(--accent);
-  background: url("resources/tile.png");
+  background: var(--surface);
   box-shadow: 4px 4px 0 var(--accent);
+  border-radius: 4px;
   line-height: 1.5;
   margin: 1em;
   overflow: auto;
-  border-radius: 4px;
 }
 
 main {
@@ -136,10 +152,15 @@ main {
 }
 
 footer {
+  border: 2px solid var(--accent);
+  background: var(--surface);
+  box-shadow: 4px 4px 0 var(--accent);
+  border-radius: 4px;
+  margin: 1rem;
   font-family: monospace;
   text-align: center;
   font-size: .8rem;
-  margin: 10px 0;
+  padding: 1em;
 }
 
 .tab {
