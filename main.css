@@ -24,15 +24,15 @@
   html {
     --text: #111;
     --surface: #f1f2f3;
-    --accent: #B3B0B7;
+    --accent: #D6D3D9;
     --link: #71A8BA;
 
     background: repeating-linear-gradient(
       45deg,
-      #71A8BA 0em,
-      #71A8BA 4em,
-      #95AFB8 4em 8em,
-      #B3B0B7 8em 12em,
+      #b2dcec 0em,
+      #b2dcec 4em,
+      #cde2ea 4em 8em,
+      #e6e3e9 8em 12em,
       #f7f8f9 12em 16em
     );
   }
